@@ -3,13 +3,16 @@
 #
 class profile_proxy::iperf3 (
   Array[Integer] $ports,
+  Boolean        $manage_package,
   Boolean        $manage_firewall,
   Boolean        $manage_sd_service,
   String         $sd_service_name,
   Array[String]  $sd_service_tags,
 ) {
-  package { 'iperf3':
-    ensure => installed,
+  if $manage_package {
+    package { 'iperf3':
+      ensure => installed,
+    }
   }
 
   user { 'iperf':
@@ -17,7 +20,7 @@ class profile_proxy::iperf3 (
     system => true,
   }
 
-  ::systemd::unit_file{ 'iperf3-server@':
+  ::systemd::unit_file{ 'iperf3-server@.service':
     source => "puppet:///modules/${module_name}/iperf3-service@.service",
   }
 

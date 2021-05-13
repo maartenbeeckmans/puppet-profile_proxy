@@ -4,7 +4,7 @@ class profile_proxy (
   Boolean $manage_iperf3,
 ) {
   if $manage_ansible {
-    include profile_proxy::ansible,
+    include profile_proxy::ansible
   }
 
   if $manage_iperf3 {
