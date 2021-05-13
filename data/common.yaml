@@ -1,0 +1,11 @@
+---
+profile_proxy::manage_ansible: true
+profile_proxy::manage_iperf3: true
+
+# Iperf 3 settings
+profile_proxy::iperf3::ports: [ 5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209 ]
+profile_proxy::iperf3::manage_firewall: true
+profile_proxy::iperf3::manage_sd_service: true
+profile_proxy::iperf3::sd_service_name: iperf3
+profile_proxy::iperf3::sd_service_tags: []
+...
