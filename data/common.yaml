@@ -1,6 +1,7 @@
 ---
 profile_proxy::manage_ansible: true
 profile_proxy::manage_iperf3: true
+profile_proxy::manage_terraform: true
 
 # Iperf 3 settings
 profile_proxy::iperf3::manage_package: false
@@ -9,4 +10,7 @@ profile_proxy::iperf3::manage_firewall: true
 profile_proxy::iperf3::manage_sd_service: true
 profile_proxy::iperf3::sd_service_name: iperf3
 profile_proxy::iperf3::sd_service_tags: []
+
+# Terraform settings
+profile_proxy::terraform::manage_repo: true
 ...
