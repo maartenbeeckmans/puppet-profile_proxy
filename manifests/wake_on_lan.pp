@@ -4,7 +4,7 @@
 class profile_proxy::wake_on_lan (
   String $concat_target = '/usr/local/bin/wake_up_nucs.sh',
 ) {
-  concat { $script_location:
+  concat { $concat_target:
     ensure => present,
     owner  => 'root',
     group  => 'root',
