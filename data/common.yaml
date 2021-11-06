@@ -2,6 +2,7 @@
 profile_proxy::manage_ansible: true
 profile_proxy::manage_iperf3: true
 profile_proxy::manage_terraform: true
+profile_proxy::manage_wol: true
 
 # Iperf 3 settings
 profile_proxy::iperf3::manage_package: false
