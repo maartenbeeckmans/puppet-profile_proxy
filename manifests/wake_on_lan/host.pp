@@ -15,9 +15,11 @@ define profile_proxy::wake_on_lan::host (
 
   $_wol_template = @(EOT)
   <%- | $hostname, $mac, $ip | -%>
-  echo 'Waking up <%= $hostname -%>'
-  wakeonlan <%= $mac -%>
-  wakeonlan -i <%= $ip %> <%= $mac -%>
+
+  echo ''
+  echo 'Waking up <%= $hostname %>'
+  wol --verbose --wait=1000 <%= $mac %>
+  wol --verbose --wait=1000 --ipaddr=<%= $ip %> <%= $mac %>
   sleep 1
   | EOT
 

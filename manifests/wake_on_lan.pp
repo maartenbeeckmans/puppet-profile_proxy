@@ -18,4 +18,8 @@ class profile_proxy::wake_on_lan (
   }
 
   Profile_proxy::Wake_on_lan::Host <<| |>>
+
+  package { 'wol':
+    ensure => present,
+  }
 }
